@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta MonsterB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Venta MonsterB 🍔</h1>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha">
+
+    <h2>Orden</h2>
+    <div id="productos"></div>
+
+    <!-- Botón para agregar orden -->
+    <button onclick="agregarVenta()">Agregar orden</button>
+
+    <!-- Botón para mostrar las ventas del día -->
+    <button onclick="mostrarVentasDelDia()">Mostrar ventas del día</button>
+    
+    <h2>Ventas del día</h2>
+    <ul id="lista-ventas"></ul>
+
+    <h3>Total del día: $<span id="total-dia">0</span></h3>
+
+    <script src="app.js"></script>
+</body>
+</html>
