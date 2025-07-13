@@ -25,3 +25,27 @@ button {
 button:hover {
     background-color: #45a049;
 }
+.categoria {
+    margin-bottom: 10px;
+}
+
+.categoria-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.categoria-btn:hover {
+    background-color: #ccc;
+}
+
+.contenido-productos {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+

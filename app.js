@@ -61,9 +61,16 @@ const totalDiaSpan = document.getElementById("total-dia");
 let ventasDelDia = [];
 
 Object.keys(productos).forEach(categoria => {
-  const tituloCategoria = document.createElement("h3");
-  tituloCategoria.textContent = categoria;
-  productosDiv.appendChild(tituloCategoria);
+  const seccion = document.createElement("div");
+  seccion.classList.add("categoria");
+
+  const boton = document.createElement("button");
+  boton.textContent = `▶️ ${categoria}`;
+  boton.classList.add("categoria-btn");
+
+  const contenedor = document.createElement("div");
+  contenedor.classList.add("productos-categoria");
+  contenedor.style.display = "none"; // Oculto por defecto
 
   productos[categoria].forEach(producto => {
     const label = document.createElement("label");
@@ -76,11 +83,26 @@ Object.keys(productos).forEach(categoria => {
     input.dataset.precio = producto.precio;
     input.dataset.nombre = producto.nombre;
 
-    productosDiv.appendChild(label);
-    productosDiv.appendChild(input);
-    productosDiv.appendChild(document.createElement("br"));
+    contenedor.appendChild(label);
+    contenedor.appendChild(input);
+    contenedor.appendChild(document.createElement("br"));
   });
+
+  boton.addEventListener("click", () => {
+    if (contenedor.style.display === "none") {
+      contenedor.style.display = "block";
+      boton.textContent = `🔽 ${categoria}`;
+    } else {
+      contenedor.style.display = "none";
+      boton.textContent = `▶️ ${categoria}`;
+    }
+  });
+
+  seccion.appendChild(boton);
+  seccion.appendChild(contenedor);
+  productosDiv.appendChild(seccion);
 });
+
 
 function agregarVenta() {
   const fecha = document.getElementById("fecha").value;
